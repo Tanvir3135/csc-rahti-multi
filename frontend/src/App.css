@@ -1,0 +1,282 @@
+body {
+  background: #181a20;
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #181a20 0%, #232946 100%);
+  color: #f3f6f9;
+  text-align: center;
+}
+
+.App-header {
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  background: rgba(24, 26, 32, 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.App-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.7rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.App-header p {
+  margin: 0;
+  font-size: 1.15rem;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+.app-info {
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.2rem;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  font-family: "Fira Mono", monospace;
+  color: #b8b8b8;
+  font-size: 0.98rem;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.App-main {
+  flex: 1;
+  padding: 2.5rem 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.task-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.2rem;
+  background: rgba(36, 37, 42, 0.7);
+  padding: 1.7rem 1.2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.task-input {
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  background: rgba(255, 255, 255, 0.13);
+  color: #f3f6f9;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.task-input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 0 2px #a18cd1;
+}
+
+.add-button {
+  padding: 0.85rem 1.7rem;
+  background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+  color: #232946;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.08rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  box-shadow: 0 2px 12px 0 rgba(161, 140, 209, 0.18);
+}
+
+.add-button:hover {
+  background: linear-gradient(90deg, #fbc2eb 0%, #a18cd1 100%);
+  color: #181a20;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 24px 0 rgba(161, 140, 209, 0.22);
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  padding: 2rem;
+}
+
+.tasks-container {
+  background: rgba(36, 37, 42, 0.7);
+  border-radius: 16px;
+  padding: 2rem 1.2rem;
+  backdrop-filter: blur(18px) saturate(180%);
+  box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tasks-container h2 {
+  margin-top: 0;
+  margin-bottom: 1.7rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #fbc2eb;
+  letter-spacing: 0.5px;
+}
+
+.no-tasks {
+  opacity: 0.7;
+  font-style: italic;
+  padding: 2rem;
+  color: #b8b8b8;
+}
+
+.tasks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1rem 1rem;
+  margin-bottom: 0.7rem;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.task-item:hover {
+  background: rgba(255, 255, 255, 0.13);
+  transform: translateY(-1px) scale(1.01);
+}
+
+.task-item.completed {
+  opacity: 0.5;
+  filter: grayscale(0.5);
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex: 1;
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #a18cd1;
+  border-radius: 4px;
+}
+
+.task-title {
+  flex: 1;
+  text-align: left;
+  font-size: 1.13rem;
+  font-weight: 500;
+  color: #f3f6f9;
+  letter-spacing: 0.1px;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #b8b8b8;
+}
+
+.task-date {
+  opacity: 0.7;
+  font-size: 0.93rem;
+  color: #b8b8b8;
+}
+
+.delete-button {
+  padding: 0.55rem 1.1rem;
+  background: linear-gradient(90deg, #f857a6 0%, #ff5858 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.98rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(248, 87, 166, 0.12);
+}
+
+.delete-button:hover {
+  background: linear-gradient(90deg, #ff5858 0%, #f857a6 100%);
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 6px 18px 0 rgba(248, 87, 166, 0.18);
+}
+
+.App-footer {
+  margin-top: auto;
+  padding: 1rem;
+  background: rgba(24, 26, 32, 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.875rem;
+  color: #818c9f;
+}
+
+.developer-info {
+  margin-bottom: 1rem;
+}
+
+.name-button {
+  background: #2a5bd7;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.name-button:hover {
+  background: #1e4fc2;
+}
+
+.developer-info p {
+  margin: 0.5rem 0;
+  color: #f3f6f9;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .App-main {
+    padding: 1.2rem 0.5rem;
+  }
+  .task-form {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1.2rem 0.7rem;
+  }
+  .tasks-container {
+    padding: 1.2rem 0.7rem;
+  }
+  .task-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    padding: 0.9rem 0.7rem;
+  }
+  .task-content {
+    justify-content: flex-start;
+  }
+  .delete-button {
+    align-self: flex-end;
+  }
+}
