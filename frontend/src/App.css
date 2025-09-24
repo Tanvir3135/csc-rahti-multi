@@ -198,6 +198,7 @@ body {
   opacity: 0.7;
   font-size: 0.93rem;
   color: #b8b8b8;
+  margin-left: 4px;
 }
 
 .delete-button {
@@ -234,11 +235,11 @@ body {
 }
 
 .name-button {
-  background: #2a5bd7;
+  background: #b3b816;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 0.875rem;
   transition: background-color 0.2s;

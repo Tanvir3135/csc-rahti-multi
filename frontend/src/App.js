@@ -108,6 +108,13 @@ function App() {
       </header>
 
       <main className="App-main">
+        <div className="developer-info">
+          <button onClick={fetchDeveloperName} className="name-button">
+            Show Name
+          </button>
+          {developerName && <p>{developerName}</p>}
+        </div>
+        <p>Deployed on CSC Rahti OpenShift Platform</p>
         <form onSubmit={addTask} className="task-form">
           <input
             type="text"
@@ -143,6 +150,7 @@ function App() {
                         className="task-checkbox"
                       />
                       <span className="task-title">{task.title}</span>
+
                       <small className="task-date">
                         {new Date(task.created_at).toLocaleDateString()}
                       </small>
@@ -160,16 +168,6 @@ function App() {
           </div>
         )}
       </main>
-
-      <footer className="App-footer">
-        <div className="developer-info">
-          <button onClick={fetchDeveloperName} className="name-button">
-            Show Developer Name
-          </button>
-          {developerName && <p>Developer: {developerName}</p>}
-        </div>
-        <p>Deployed on CSC Rahti OpenShift Platform</p>
-      </footer>
     </div>
   );
 }
